@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#070e17" />
+  <meta name="description" content="AFCSC Jaji — Our Leaders interactive Hall of Fame digital exhibition. Sample content pending validation." />
+  <title>Our Leaders | AFCSC Hall of Fame</title>
+  <link rel="icon" type="image/png" href="assets/afcsc-emblem.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="experience.css" />
+  <link rel="stylesheet" href="cinematic.css" />
+</head>
+<body>
+  <div class="ambient" aria-hidden="true">
+    <div class="ambient-grid"></div><div class="ambient-glow glow-a"></div><div class="ambient-glow glow-b"></div>
+    <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="dust" id="dust"></div>
+    <div class="heritage-watermark"><img src="assets/afcsc-emblem.png" alt="" /></div>
+    <div class="colour-ribbon" aria-hidden="true"></div>
+  </div>
+  <div class="intro" id="intro" aria-label="Opening exhibition" role="status">
+    <div class="intro-top"><span>AFCSC / JAJI</span><span>HALL OF FAME — 01 / 01</span></div>
+    <div class="intro-core">
+      <div class="intro-orbit"><div class="intro-orbit-inner"></div><img src="assets/afcsc-emblem.png" alt="Armed Forces Command and Staff College emblem" /></div>
+      <div class="intro-overline">DEPARTMENT OF AIR WARFARE</div>
+      <div class="intro-title"><span>OUR</span><strong>LEADERS</strong></div>
+      <p class="intro-caption">A digital portrait of leadership and service</p>
+      <div class="intro-progress"><div class="intro-progress-bar" id="introProgress"></div></div>
+      <div class="intro-counter" id="introCounter">00%</div>
+    </div>
+    <button type="button" class="intro-skip" id="skipIntro">SKIP INTRO <span aria-hidden="true">↗</span></button>
+  </div>
+
+  <div id="app" class="app">
+    <header class="topbar">
+      <button class="brand" id="brandHome" aria-label="Back to Our Leaders home">
+        <img src="assets/afcsc-emblem.png" alt="AFCSC emblem" />
+        <span class="brand-lines"><b>AFCSC</b><small>HALL OF FAME <i></i> JAJI</small></span>
+      </button>
+      <div class="nav-center"><span class="nav-line"></span><span>THE PEOPLE. THE SERVICE. THE LEGACY.</span><span class="nav-line"></span></div>
+      <div class="top-actions">
+        <span class="sample-pill" title="The client has not yet confirmed names, photos, biographies or tenure dates"><span></span> SAMPLE PREVIEW</span>
+        <button class="motion-toggle" id="motionToggle" type="button" aria-pressed="true" aria-label="Pause ambient animation"><span class="motion-dot"></span><span class="motion-text">MOTION ON</span></button>
+        <button class="tool-btn" id="openGuide" aria-label="Show controls" title="Controls">?</button>
+        <button class="tool-btn" id="toggleFull" aria-label="Toggle full screen" title="Full screen">⛶</button>
+        <button class="exit-trigger" type="button" id="exitButton" aria-label="Exit exhibition">⏻ <span>EXIT</span></button>
+      </div>
+    </header>
+    <main class="main-stage" id="mainStage">
+      <div class="chapter-overline reveal"><span class="chapter-index">01 / OUR LEADERS</span><span class="chapter-rule"></span><span class="chapter-location">ARMED FORCES COMMAND AND STAFF COLLEGE · JAJI</span></div>
+      <section class="headline-zone reveal">
+        <div>
+          <p class="hero-kicker">LEADERSHIP THROUGH THE YEARS</p>
+          <h1 class="hero-title">OUR <em>LEADERS</em><span class="hero-title-dot">.</span></h1>
+          <p class="hero-description">Two offices. A continuing record of leadership.</p>
+        </div>
+        <div class="headline-side"><span class="headline-side-index">01—02</span><p>Explore the leadership of the College and the Department of Air Warfare.</p></div>
+      </section>
+      <div class="explore-strip reveal" aria-label="Select which leadership office to highlight"><span class="strip-caption"><i></i> EXPLORE THE LEADERSHIP WALL</span>
+        <div class="office-tabs" role="group" aria-label="Highlight a leadership office">
+          <button class="office-tab active" type="button" id="spotlightCommandant" aria-pressed="false"><b class="tiny-glyph blue-glyph"></b> THE COMMANDANTS <span>01</span></button>
+          <button class="office-tab" type="button" id="spotlightDirector" aria-pressed="false"><b class="tiny-glyph red-glyph"></b> AIR WARFARE <span>02</span></button>
+          <button class="reset-focus" type="button" id="resetSpotlight" aria-label="Show both leadership offices equally" title="Show both offices">↔</button>
+        </div>
+      </div>
+      <section class="pair" id="pair" aria-label="Featured leadership offices">
+        <article class="leader-wing leader-wing-blue" id="wing-commandant"></article>
+        <div class="pair-center"><button class="pair-connector" type="button" id="focusBoth" aria-label="Reset spotlight and show both offices"><img src="assets/afcsc-emblem.png" alt="" /><span class="pair-cross" aria-hidden="true">✦</span></button><span class="pair-side-word">ONE COLLEGE · TWO OFFICES</span></div>
+        <article class="leader-wing leader-wing-red" id="wing-director"></article>
+      </section>
+      <section class="bottom-deck reveal" aria-label="Explore the exhibition">
+        <div class="bottom-stat"><span class="tiny-number">02</span><span>LEADERSHIP OFFICES</span></div>
+        <div class="bottom-stat"><span class="tiny-number">14</span><span>ILLUSTRATIVE PROFILES</span></div>
+        <div class="bottom-divider"></div>
+        <button class="deck-action" data-action="roll" data-group="commandant"><span>01</span> COMMANDANTS ROLL <b>↗</b></button>
+        <button class="deck-action" data-action="roll" data-group="director"><span>02</span> DIRECTORS ROLL <b>↗</b></button>
+        <button class="deck-action deck-action-outline" data-action="timeline"><span>↗</span> VIEW TENURE TIMELINE</button>
+      </section>
+    </main>
+    <footer class="footbar"><span>DEPARTMENT OF AIR WARFARE <span class="dim">/ AFCSC/527/DAW</span></span><span class="foot-center">TOUCH A PORTRAIT · SWIPE BETWEEN PROFILES <span class="arrow-down">↗</span></span><button id="openPhotoArchive">EXPLORE PHOTO ARCHIVE ↗</button></footer>
+  </div>
+
+  <div class="view" id="view" role="dialog" aria-modal="true" aria-labelledby="viewTitle" aria-hidden="true" tabindex="-1">
+    <div class="view-top">
+      <button class="view-back" id="closeView"><span class="arrow-circle">←</span> BACK TO OUR LEADERS</button>
+      <span class="view-kicker" id="viewKicker">AFCSC / HALL OF FAME</span>
+      <div class="view-tools"><button class="exit-trigger exit-trigger-small" type="button" id="viewExitButton" aria-label="Exit exhibition">⏻ <span>EXIT</span></button>
+      <button class="view-close-icon" id="closeViewIcon" aria-label="Close panel">✕</button></div>
+    </div>
+    <div class="view-content" id="viewContent"></div>
+    <div class="view-foot"><span>AFCSC · DEPARTMENT OF AIR WARFARE</span><span id="viewFootRight">SAMPLE CONTENT · PENDING VERIFICATION</span></div>
+  </div>
+
+  <div class="lightbox cinematic-gallery" id="lightbox" role="dialog" aria-modal="true" aria-label="Immersive portrait viewing gallery" aria-hidden="true">
+    <div class="gallery-atmosphere" aria-hidden="true"></div>
+    <div class="gallery-top"><span class="gallery-eyebrow">AFCSC / THE PORTRAIT COLLECTION</span>
+      <div class="gallery-top-actions"><button type="button" class="exit-trigger exit-trigger-small" id="galleryExitButton">⏻ <span>EXIT</span></button><button type="button" id="closeLightbox" class="lightbox-close" aria-label="Close portrait">✕</button></div>
+    </div>
+    <div class="gallery-main">
+      <button type="button" id="galleryPrevious" class="gallery-step" aria-label="Previous portrait">←</button>
+      <div class="gallery-hero" id="galleryHero"><div class="gallery-halo" aria-hidden="true"></div><div class="gallery-frame"><img id="lightboxImg" alt="" /><span class="gallery-corner corner-tl"></span><span class="gallery-corner corner-br"></span></div></div>
+      <button type="button" id="galleryNext" class="gallery-step" aria-label="Next portrait">→</button>
+    </div>
+    <div class="gallery-lower"><div class="gallery-copy"><span>PORTRAIT / <b id="galleryCount">01 / 01</b></span><strong id="lightboxLabel">Portrait archive</strong></div>
+      <button type="button" id="galleryPlay" class="gallery-play" aria-pressed="true" aria-label="Pause portrait slideshow"><span id="galleryPlayIcon">Ⅱ</span><span id="galleryPlayText">PAUSE SLIDESHOW</span><span class="gallery-play-timer"><i id="galleryTimerBar"></i></span></button></div>
+    <div class="gallery-filmstrip-wrap"><div class="gallery-filmstrip" id="galleryFilmstrip" aria-label="Select a portrait"></div><span class="filmstrip-hint">← SWIPE OR DRAG TO EXPLORE →</span></div>
+  </div>
+  <div class="help-overlay" id="helpOverlay" role="dialog" aria-modal="true" aria-labelledby="helpTitle" aria-hidden="true">
+    <div class="help-card"><button id="closeHelp" class="help-close" aria-label="Close controls">✕</button><span class="meta-label">EXHIBITION GUIDE / 01</span>
+      <h2 id="helpTitle">How to <em>explore.</em></h2>
+      <div class="help-grid"><div><b>01 / TAP</b><p>Open a featured leader, the historical roll or a portrait.</p></div><div><b>02 / SEARCH</b><p>Search sample service records by rank or name.</p></div><div><b>03 / SWIPE</b><p>Swipe between leaders in profile view, or use arrow keys.</p></div><div><b>04 / RETURN</b><p>Use Back or Escape to return to the two-office wall.</p></div></div>
+      <p class="help-disclaimer">The visual content is illustrative until the College confirms the official names, appointment dates, biographies and photo mapping.</p>
+      <button class="primary-btn" id="helpBegin">CONTINUE EXPLORING <span>↗</span></button>
+    </div>
+  </div>
+  <div class="exit-modal" id="exitModal" role="dialog" aria-modal="true" aria-labelledby="exitModalTitle" aria-hidden="true">
+    <div class="exit-modal-dim"></div><div class="exit-modal-card">
+      <span class="exit-modal-index">AFCSC / EXHIBITION CONTROL</span><img src="assets/afcsc-emblem.png" alt="AFCSC emblem" class="exit-modal-emblem" />
+      <h2 id="exitModalTitle">Leave the <em>exhibition?</em></h2><p>Are you sure you want to cancel and exit the Our Leaders experience?</p>
+      <div class="exit-modal-actions"><button type="button" id="cancelExit" class="exit-stay">← CONTINUE EXPLORING</button><button type="button" id="confirmExit" class="exit-confirm">YES, EXIT <span>↗</span></button></div>
+      <span class="exit-modal-footnote">Your current viewing position will be preserved.</span>
+    </div>
+  </div>
+  <div class="exit-complete" id="exitComplete" aria-label="Exhibition closed" aria-hidden="true">
+    <div class="exit-complete-rays" aria-hidden="true"></div><img src="assets/afcsc-emblem.png" alt="AFCSC emblem" />
+    <span class="exit-complete-kicker">AFCSC · HALL OF FAME</span><h2>EXHIBITION <em>CLOSED.</em></h2><p>Thank you for exploring Our Leaders.</p>
+    <button type="button" id="returnExhibition">↶ RETURN TO EXHIBITION</button>
+  </div>
+  <script src="data.js"></script>
+  <!-- Optional async GSAP enhancement when online; native animation fallbacks remain fully functional offline. -->
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="app.js"></script>
+  <script src="experience.js"></script>
+</body>
+</html>
